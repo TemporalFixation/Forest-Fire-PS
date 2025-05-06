@@ -15,9 +15,10 @@ $adminUrl = "https://$tenant-admin.sharepoint.com"
 Write-Host "`nConnecting to SharePoint Online at $adminUrl..." -ForegroundColor Cyan
 Connect-SPOService -Url $adminUrl
 
-# Format OneDrive site URL
+# Format OneDrive site URL correctly (no extra tenant suffix)
 $onedriveUserPart = $user.Replace("@", "_").Replace(".", "_")
-$onedriveUrl = "https://$tenant-my.sharepoint.com/personal/${onedriveUserPart}_$tenant_com"
+$onedriveUrl = "https://$tenant-my.sharepoint.com/personal/$onedriveUserPart"
+$onedriveLink = "$onedriveUrl/_layouts/15/onedrive.aspx"
 
 # Grant delegate Site Collection Admin rights
 Write-Host "Granting $delegate access to $user's OneDrive..." -ForegroundColor Yellow
@@ -25,5 +26,5 @@ Set-SPOUser -Site $onedriveUrl -LoginName $delegate -IsSiteCollectionAdmin $true
 
 # Output result
 Write-Host "`nDelegate access granted." -ForegroundColor Green
-Write-Host "Delegate can access the user's OneDrive at:" -ForegroundColor Green
-Write-Host "$onedriveUrl/_layouts/15/onedrive.aspx" -ForegroundColor White
+Write-Host "`nDelegate can access the user's OneDrive at:" -ForegroundColor Green
+Write-Host $onedriveLink -ForegroundColor White
