@@ -48,10 +48,9 @@ ForestFirePS is a curated collection of PowerShell tools built for sysadmins man
 
 ```plaintext
 ForestFirePS/
-├── Kindling_AD/            # Lightweight AD scripts (unlock, query, reports)
+├── Kindling_AD/            # Most AD scripts (Creation, Offboarding, Syncing)
 ├── Blaze_Azure/            # Azure/Entra scripts (conditional access, licenses)
 ├── SmokeSignals_GAM/       # GAM scripts for Google Admin (user mgmt, audits)
-├── Lifecycle/              # Onboarding, offboarding, lifecycle workflows
 ├── Firebreaks/             # Audit & safety tools, backups, dry runs
 └── Docs/                   # Usage guides, config templates, internal docs
 ```
