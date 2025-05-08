@@ -49,6 +49,8 @@ ForestFirePS is a curated collection of PowerShell tools built for sysadmins man
 ```plaintext
 ForestFirePS/
 ├── Kindling_AD/            # Most AD scripts (Creation, Offboarding, Syncing)
+├── Exchange_Watchtower/    # Exchange Scripts (permissions to send as)
+├── Permission_Pyro/        # Ondrive/Sharepoint Management (conditional access, licenses)
 ├── Blaze_Azure/            # Azure/Entra scripts (conditional access, licenses)
 ├── SmokeSignals_GAM/       # GAM scripts for Google Admin (user mgmt, audits)
 ├── Firebreaks/             # Audit & safety tools, backups, dry runs
@@ -105,7 +107,9 @@ Please test in development environments or use `-WhatIf` mode before applying an
 | `Get-LicenseSummary.ps1` | View assigned M365/Azure licenses |
 | `Get-StaleUsers.ps1` | List inactive accounts across domains |
 | `Test-GroupNesting.ps1` | Report nested group structures |
+| `Check-UserMailboxPermissions.ps1` | Asks for a mailbox, reports all shared mailboxes it has Send As and Full Access to |
 | `Start-ControlledBurn.ps1` | Batch execute changes with safety flags |
+| `Write-SmokeSignal.ps1` | Email or log alerts after scripted actions |
 | `Write-SmokeSignal.ps1` | Email or log alerts after scripted actions |
 
 ---
